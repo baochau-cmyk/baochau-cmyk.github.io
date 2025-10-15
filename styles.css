@@ -1,0 +1,170 @@
+body {
+  margin: 0;
+  font-family: "Helvetica", sans-serif;
+  background-color: #E3A2E6;
+  color: #000;
+  scroll-behavior: smooth;
+  font-weight: 500;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2em 5%;
+  background: #E9DACD;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.logo {
+  font-weight: 900;
+  font-size: 1.8rem;
+  color: #000;
+  letter-spacing: 1px;
+}
+
+.navbar a {
+  margin: 0 1em;
+  text-decoration: none;
+  font-weight: 600;
+  color: #000;
+}
+
+.navbar a:hover {
+  color: #FFBE55;
+}
+
+/* ===== HERO ===== */
+.hero {
+  text-align: center;
+  position: relative;
+}
+
+.hero-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.hero-text {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #000;
+  text-shadow: 1px 1px 6px rgba(255,255,255,0.7);
+}
+
+.hero-text span {
+  color: #E9DACD;
+}
+
+/* ===== SECTION ===== */
+.section {
+  padding: 4em 10%;
+  background: #E9DACD;
+  margin: 2em 5%;
+  border-radius: 1.5em;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.section h2 {
+  font-size: 1.8em;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 0.8em;
+}
+
+/* ===== SKILLS ===== */
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.skill {
+  font-weight: 500;
+}
+
+.skill-bar {
+  background: #E3A2E6;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 16px;
+  margin-top: 4px;
+}
+
+.skill-bar .fill {
+  height: 100%;
+  background: #FFBE55;
+  border-radius: 8px 0 0 8px;
+  transition: width 1s ease-in-out;
+}
+
+/* ===== PROJECTS ===== */
+.project {
+  background: #FFBE55;
+  padding: 1.5em;
+  border-radius: 1em;
+  margin-bottom: 2em;
+  color: #000;
+}
+
+.project img {
+  width: 100%;
+  border-radius: 12px;
+  margin: 0.5em 0;
+}
+
+.btn {
+  display: inline-block;
+  background: #E9DACD;
+  padding: 0.6em 1.2em;
+  border-radius: 8px;
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #FFBE55;
+  color: #000;
+}
+
+/* ===== CONTACT ===== */
+.contact-list {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-list li {
+  margin: 0.5em 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: #E9DACD;
+  text-align: center;
+  padding: 1.5em;
+  font-weight: 500;
+  color: #000;
+}
+
+/* ===== POP-UP EFFECT ===== */
+.pop {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.pop.show {
+  opacity: 1;
+  transform: translateY(0);
+}
