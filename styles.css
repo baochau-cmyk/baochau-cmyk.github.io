@@ -1,0 +1,256 @@
+/* Màu sắc lấy cảm hứng từ hình ảnh RàMU (Hồng đậm, Đen, Trắng) và một số màu tươi sáng/nổi bật */
+:root {
+  --main-pink: #f0c3c3; /* Hồng nhạt, nền chính */
+  --dark-pink: #c99393; /* Hồng đậm hơn, tương tự màu cam đất trong ảnh */
+  --highlight-color: #e73e8a; /* Hồng nổi bật/tươi sáng (từ Branding Identity badge) */
+  --text-color: #242424; /* Màu chữ đen đậm */
+  --background-white: #ffffff; /* Nền trắng cho các section */
+  --button-color: #242424; /* Màu nút bấm/navbar */
+}
+
+body {
+  margin: 0;
+  /* Sử dụng font Bebas Neue cho tiêu đề (hoặc font khác tương tự font RàMU) và Space Grotesk cho nội dung */
+  font-family: "Space Grotesk", sans-serif;
+  background-color: var(--main-pink);
+  color: var(--text-color);
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2em 5%;
+  background: var(--button-color); /* Nền đen/đậm */
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  border-bottom: 3px solid var(--highlight-color); /* Viền nổi bật */
+}
+
+.logo {
+  font-family: "Bebas Neue", sans-serif; /* Font nổi bật */
+  font-size: 2.5rem;
+  color: var(--main-pink); /* Màu logo nhạt hơn */
+}
+
+.navbar a {
+  margin: 0 1em;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--main-pink);
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: var(--highlight-color);
+}
+
+.hero {
+  text-align: center;
+  position: relative;
+}
+
+.hero-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  filter: brightness(0.7); /* Tối ảnh hơn để chữ nổi bật */
+}
+
+.hero-text {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+  width: 90%;
+}
+
+.hero-text h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 3rem;
+  margin-bottom: 0.2em;
+}
+
+.hero-text span {
+  color: var(--highlight-color);
+}
+
+.section {
+  padding: 4em 10%;
+  background: var(--background-white);
+  margin: 2em auto;
+  border-radius: 1em; /* Góc bo nhẹ nhàng hơn */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  max-width: 900px;
+  border: 2px solid var(--dark-pink); /* Viền tạo cảm giác như khung ảnh */
+}
+
+.section h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2.5em;
+  color: var(--highlight-color);
+  margin-bottom: 0.8em;
+}
+
+/* Bar chart */
+.skills-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+}
+
+.bar {
+  position: relative;
+  background: var(--main-pink);
+  border-radius: 0.5em;
+  padding: 0.6em 1em;
+  font-weight: 600;
+  /* Dựa trên biến --p, tính độ dài thanh tiến trình */
+  width: calc(var(--p) * 2); /* Nhân đôi giá trị phần trăm để hiển thị */
+  max-width: 100%;
+  transition: all 1s ease;
+  color: var(--text-color);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  border: 1px solid var(--dark-pink);
+}
+
+.bar::after {
+  content: attr(style);
+  display: none;
+}
+
+.professional-skills-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1em;
+}
+
+.professional-skills-list li {
+    margin-bottom: 0.5em;
+}
+
+/* Projects */
+.project {
+  background: var(--main-pink); /* Màu nền dự án */
+  padding: 1.5em;
+  border-radius: 1em;
+  margin-bottom: 2em;
+  transition: 0.3s;
+  border: 1px solid var(--dark-pink);
+}
+
+.project:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.project img {
+  width: calc(50% - 0.5em); /* Cho 2 ảnh trên cùng 1 hàng */
+  border-radius: 8px;
+  margin-bottom: 0.5em;
+  display: inline-block;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+.project img:first-child:not(:last-child) {
+    margin-right: 1em;
+}
+
+.project .info h3 {
+    color: var(--button-color);
+}
+
+.btn {
+  display: inline-block;
+  background: var(--button-color); /* Nút màu đen */
+  padding: 0.6em 1.2em;
+  border-radius: 6px;
+  color: var(--main-pink); /* Chữ màu hồng nhạt */
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: var(--highlight-color); /* Hover màu nổi bật */
+  color: var(--background-white);
+}
+
+/* Contact */
+.contact-list {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-list li {
+  margin: 0.8em 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-list li a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.contact-list li a:hover {
+    color: var(--highlight-color);
+}
+
+footer {
+  background: var(--dark-pink);
+  text-align: center;
+  padding: 1.5em;
+  color: var(--background-white);
+  font-weight: 500;
+}
+
+/* Scroll animation (giữ nguyên) */
+.pop {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.pop.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section {
+    padding: 3em 7%;
+  }
+
+  .navbar {
+    flex-direction: column;
+    padding: 1em 5%;
+  }
+
+  .navbar nav a {
+    display: inline-block;
+    margin: 0.3em 0.5em;
+    font-size: 0.9em;
+  }
+
+  .hero-text h2 {
+      font-size: 2.5rem;
+  }
+  
+  .project img {
+    width: 100%;
+    margin-right: 0 !important;
+  }
+
+  .project img:first-child:not(:last-child) {
+      margin-bottom: 1em;
+  }
+}
